@@ -1,0 +1,56 @@
+create table users(student_name varchar(20),student_email varchar(22));
+insert into users (student_name,student_email) Values('sameena','sameena@gmail.com'),('siri','siri@gmail'),('sher','sher@gmail'),('appu','appu@gmail'),('sammu','sammu@gmail') ;
+select * from users;
+
+create table codekata(student_email varchar(20),questionsolved int);
+insert into codekata (student_email,questionsolved) Values('sameena@gmail.com','22'),('siri@gmail','20'),('sher@gmail','18'),('appu@gmail','19'),('sammu@gmail','16') ;
+select * from codekata;
+
+create table attendance(student_name varchar(20),attendance int);
+insert into attendance (student_name,attendance) Values('sameena','92'),('siri','90'),('sher','88'),('appu','87'),('sammu','92') ;
+select * from attendance;
+
+create table topics(topic_name varchar(20));
+insert into topics(topic_name) Values('CREATION OF TABLE'),('INSERTING VALUES'),('UPDATING THE TABLE'),('ALTERING THE TABLE'),('DELETION OF TABLE') ;
+select * from topics;
+
+create table tasks(task_name varchar(20),student_name varchar(20),student_status varchar(10));
+insert into tasks(task_name,student_name,student_status) Values('CREATION OF TABLE','sameena','completed'),('INSERTING VALUES','siri','completed'),('UPDATING THE TABLE','sher','pending'),('ALTERING THE TABLE','appu','pending'),('DELETION OF TABLE','sammu','completed') ;
+select * from tasks;
+
+create table company_drives(company_name varchar(20),student_name varchar(20));
+insert into company_drives(company_name,student_name) Values('TCS','sameena'),('WIPRO','siri'),('CISCO','sher'),('IBM','appu'),('GOOGLE','sammu') ;
+select * from company_drives;
+
+create table mentors(mentor_id int,mentor_name varchar(20),student_name varchar(20));
+insert into mentors(mentor_id,mentor_name,student_name) Values('1','Aniket','sameena'),('2','Swathy','siri'),('3','Kiran','sher'),('4','Rajesh','appu'),('1','Aniket','sammu') ;
+select * from mentors;
+
+create table students_activated_courses(course_id int,student_name varchar(20));
+insert into students_activated_courses(course_id,student_name) Values('101','sameena'),('101','siri'),('102','sher'),('104','appu'),('102','sammu') ;
+select * from students_activated_courses;
+
+
+create table courses(course_id int,course_name varchar(20));
+insert into courses(course_id,course_name) Values('101','JAVA'),('102','PYTHON'),('104','C++') ;
+select * from courses;
+
+
+#display company drives attended by a user
+select count(company_name) from company_drives where student_name='sameena';
+
+
+#list the number of students that are assigned for a mentor
+select count(mentor_name) from mentors where mentor_name='Aniket';
+
+
+#list all the mentors 
+select distinct mentor_name from mentors;
+
+
+#get number of problems solved in codekata by a user
+select distinct questionsolved from codekata left join  users on student_name=student_name;
+
+
+#combine and display student_activated_courses and courses for a specific user grouping them based on the courses
+select s.student_name,c.course_id,c.course_name from students_activated_courses s join courses s.course_id=c.course_id;
