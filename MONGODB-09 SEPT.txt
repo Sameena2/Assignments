@@ -1,0 +1,695 @@
+ show dbs;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use users;
+switched to db users
+
+
+#users
+> db.users.insertMany([
+...         {
+...         "Id" : 1,
+...           "Name" : "Sameena",
+...           "Absent" : ["8-10-2020","13-10-2020","18-10-2020"],
+...           "Task":{
+...                "Task_name" : "creation of tables",
+...                 "Sub_date" : "10-11-2020"
+...                 }
+...          },
+...          {
+...             "Id" : 2,
+...              "Name" : "sharanya",
+...              "Absent" : ["7-10-2020","19-10-2020"],
+...              "Task":{
+...                  "Task_name" : "creation of table",
+...                  "Sub_date" : "20-10-2020"
+...                     }
+...          },
+...         {
+...              "Id" : 3,
+...              "Name" : "Apoorva",
+...              "Absent" : ["17-10-2020","21-10-2020","28-10-2020"],
+...              "Task":{
+...                  "Task_name" : "creation of table",
+...                  "Sub_date" : "13-11-2020"
+...                  }
+...          },
+...          {
+...              "Id" : 4,
+...              "Name" : "sushmitha",
+...              "Absent" : ["9-10-2020","13-10-2020"],
+...              "Task":{
+...                  "Task_name" : "creation of table",
+...                  "Sub_date" : "22-10-2020"
+...              }
+...          },
+...          {
+...              "Id" : 5,
+...              "Name" : "prathima",
+...              "Absent" : ["7-10-2020","15-10-2020","20-10-2020"],
+...              "Task":{
+...                  "Task_name" : "creation of table",
+...                  "Sub_date" : "19-11-2020"
+...              }
+...          }
+...      ]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613c8da7d53ca649e27eafe0"),
+                ObjectId("613c8da7d53ca649e27eafe1"),
+                ObjectId("613c8da7d53ca649e27eafe2"),
+                ObjectId("613c8da7d53ca649e27eafe3"),
+                ObjectId("613c8da7d53ca649e27eafe4")
+        ]
+}
+
+
+#codekata
+> db.codekata.insertMany([
+...     {
+...         "Id" : 1,
+...         "Name" : "Sameena",
+...         "Email" : "sameena@gmail.com",
+...         "Problems" :{
+...             "Total" : 50,
+...             "Solved" : 35,
+...             "Unsolved" : 15,
+...         }
+...     },
+...     {
+...         "Id" : 2,
+...         "Name" : "sharanya",
+...         "Email" : "sharanya@gmail.com",
+...         "Problems" :{
+...             "Total" : 50,
+...             "Solved" : 30,
+...             "Unsolved" : 20,
+...         }
+...     },
+...     {
+...         "Id" : 3,
+...         "Name" : "Apoorva",
+...         "Email" : "apoorva@gmail.com",
+...         "Problems" :{
+...             "Total" : 50,
+...             "Solved" : 29,
+...             "Unsolved" : 21,
+...         }
+...    },
+...     {
+...         "Id" : 4,
+...         "Name" : "Sushmitha",
+...         "Email" : "sushmitha@gmail.com",
+...         "Problems" :{
+...             "Total" : 50,
+...             "Solved" : 20,
+...             "Unsolved" : 30,
+...         }
+...     },
+...     {
+...         "Id" : 5,
+...         "Name" : "prathima",
+...         "Email" : "prathima@gmail.com",
+...         "Problems" :{
+...             "Total" : 50,
+...             "Solved" : 40,
+...             "Unsolved" : 10,
+...         }
+...     }
+... ]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613c8f75d53ca649e27eafe5"),
+                ObjectId("613c8f75d53ca649e27eafe6"),
+                ObjectId("613c8f75d53ca649e27eafe7"),
+                ObjectId("613c8f75d53ca649e27eafe8"),
+                ObjectId("613c8f75d53ca649e27eafe9")
+        ]
+}
+
+
+#attendance
+> db.attendance.insertMany([
+...                      {
+...                          "Class" : "CSE-A",
+...                          "Students" : 50,
+...                          "Date" : new Date("2020-10-15"),
+...                          "Absent" : 12,
+...                          "Present" : 38
+...                      },
+...                      {
+...                          "Class" : "CSE-B",
+...                          "No_Of_Students" : 50,
+...                          "Date" : new Date("2020-10-30"),
+...                          "Absent" : 2,
+...                          "Present" : 48
+...                      },
+...                      {
+...                          "Class" : "CSE-C",
+...                          "No_Of_Students" : 50,
+...                          "Date" : new Date("2020-10-30"),
+...                          "Absent" : 5,
+...                          "Present" : 45
+...                      },
+...                      {
+...                          "Class" : "CSE-D",
+...                          "No_Of_Students" : 50,
+...                          "Date" : new Date("2020-10-15"),
+...                          "Absent" : 7,
+...                          "Present" : 43
+...                      },
+...                      {
+...                          "Class" : "CSE-E",
+...                          "No_Of_Students" : 50,
+...                          "Date" : new Date("2020-10-15"),
+...                          "Absent" : 8,
+...                          "Present" : 42
+...                      }
+...                  ]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613c9265d53ca649e27eafea"),
+                ObjectId("613c9265d53ca649e27eafeb"),
+                ObjectId("613c9265d53ca649e27eafec"),
+                ObjectId("613c9265d53ca649e27eafed"),
+                ObjectId("613c9265d53ca649e27eafee")
+        ]
+}
+
+
+#mentors
+> db.mentors.insertMany([
+...     {
+...         "Id" : 101,
+...         "Name" : "Rajesh",
+...         "Branch" : "CSE",
+...         "Mentees":{
+...             "Mentee_Id":[2,3,11,14,9,75,98,181]
+...         }
+...     },
+...     {
+...         "Id" : 2,
+...         "Name" : "Swapna",
+...         "Branch" : "CSE",
+...         "Mentees":{
+...             "Mentee_Id":[1,4,5,10,18,20,66,72,87,95,103,117,118,125,131,145,146,147,169,182]
+...         }
+...     },
+...     {
+...         "Id" : 3,
+...         "Name" : "Suhana",
+...         "Branch" : "CSE",
+...         "Mentees":{
+...             "Mentee_Id":[6,24,27,40,45,50,70,91,104,106,111,164,179,183]
+...         }
+...     },
+...     {
+...         "Id" : 4,
+...         "Name" : "Aniket",
+...         "Branch" : "CSE",
+...         "Mentees":{
+...             "Mentee_Id":[10,16,23,29,30,34,64,97,98,99,107,119,184,185]
+...         }
+...     },
+...     {
+...         "Id" : 5,
+...         "Name" : "Saif",
+...         "Branch" : "MECH",
+...         "Mentees":{
+...             "Mentee_Id":[4,8,10,15,17,20,28,30,33,45,53,66,72,84,99]
+...         }
+...     }
+... ]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613c96c6d53ca649e27eafef"),
+                ObjectId("613c96c6d53ca649e27eaff0"),
+                ObjectId("613c96c6d53ca649e27eaff1"),
+                ObjectId("613c96c6d53ca649e27eaff2"),
+                ObjectId("613c96c6d53ca649e27eaff3")
+        ]
+}
+
+
+#company_drives
+> db.campus_drive.insertMany([
+...                      {
+...                          "Id" : 1,
+...                          "company_name" : "CHUBB",
+...                          "Date" : "15-10-2020",
+...                          "Placement" : {
+...                              "Colleges" : [
+...                                  {
+...                                      "Clg_name" : "KITS",
+...                                      "Students_names" : ["sam","rosy"]
+...                                  },
+...                              ]
+...                          }
+...                      },
+...                      {
+...                          "Id" : 2,
+...                          "company_name" : "GOOGLE",
+...                          "Date" : "28-10-2020",
+...                          "Placement" : {
+...                              "Colleges" : [
+...                                  {
+...                                      "Clg_name" : "SR",
+...                                      "Students_names" : ["irshaan","nausheen","swathi"]
+...                                  },
+...                              ]
+...                          }
+...                      },
+...                      {
+...                          "Id" : 3,
+...                          "company_name" : "AMAZON",
+...                          "Date" : "27-10-2020",
+...                          "Placement" : {
+...                              "Colleges" : [
+...                                  {
+...                                      "Clg_name" : "KITSW",
+...                                      "Students_names" : ["sameena","sharanya","sushmitha","apoorva"]
+...                                  },
+...                                  {
+...                                      "Clg_name" : "JNTU-H",
+...                                      "Students_names" : ["prathima","niharika","saif"]
+...                                  }
+...                              ]
+...                          }
+...                      },
+...                      {
+...                          "Id" : 4,
+...                          "Name" : "TCS",
+...                          "Date" : "14-10-2020",
+...                          "Placement" : {
+...                              "Colleges" : [
+...                                  {
+...                                      "Clg_name" : "CBIT",
+...                                      "Students_names" : ["anogna","madeeha","shirisha","samreen"]
+...                                  }
+...                              ]
+...                          }
+...                      },
+...                      {
+...                          "Id" : 5,
+...                          "Name" : "COGNIZANT",
+...                          "Date" : "12-10-2020",
+...                          "Placement" : {
+...                              "Colleges" : [
+...                                  {
+...                                      "Clg_name" : "JNTU-K",
+...                                      "Students_names" : ["Ayesha","maheen"]
+...                                  },
+...                              ]
+...                          }
+...                      }
+...                  ]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613c9c99d53ca649e27eaff4"),
+                ObjectId("613c9c99d53ca649e27eaff5"),
+                ObjectId("613c9c99d53ca649e27eaff6"),
+                ObjectId("613c9c99d53ca649e27eaff7"),
+                ObjectId("613c9c99d53ca649e27eaff8")
+        ]
+}
+
+
+#topic_task
+
+ db.topic_task.insertMany([
+...                           {
+...                               "Topic_id" : 1,
+...                               "Topic_name" : "INTRODUCTION TO SQL",
+...                               "Date" : new Date("2020-10-05"),
+...                               "Task" :
+...                                   {
+...                                       "Task_id" : 1,
+...                                       "Task_name" : "ASSIGNMENT-1",
+...                                       "Task_date" : new Date("2020-10-06")
+...                                   }
+...
+...                           },
+...                           {
+...                               "Topic_id" : 2,
+...                               "Topic_name" : "CREATION,UPDATION OF TABLE",
+...                               "Date" : new Date("2020-10-12"),
+...                               "Task" :
+...                                   {
+...                                       "Task_id" : 1,
+...                                       "Task_name" : "ASSIGNMENT-2",
+...                                       "Task_date" : new Date("2020-10-13")
+...                                   }
+...
+...                           },
+...                           {
+...                               "Topic_id" : 3,
+...                               "Topic_name" : "JOINS",
+...                               "Date" : new Date("2020-10-22"),
+...                               "Task" :
+...                                   {
+...                                       "Task_id" : 1,
+...                                       "Task_name" : "ASSIGNMENT-3",
+...                                       "Task_date" : new Date("2020-10-23")
+...                                   }
+...
+...                           },
+...                           {
+...                               "Topic_id" : 4,
+...                               "Topic_name" : "INTRODUCTION TO MONGODB",
+...                               "Date" : new Date("2020-10-30"),
+...                               "Task" :
+...                                   {
+...                                       "Task_id" : 1,
+...                                       "Task_name" : "ASSIGNMENT-4",
+...                                       "Task_date" : new Date("2020-11-01")
+...                                   }
+...
+...                           },
+...                           {
+...                            "Topic_id" : 5,
+...                            "Topic_name" : "AGGREGATION",
+...                            "Date" : new Date("2020-12-01"),
+...                               "Task" :
+...                                   {
+...                                       "Task_id" : 1,
+...                                       "Task_name" : "ASSIGNMENT-5",
+...                                       "Task_date" : new Date("2020-12-02")
+...                                   }
+...
+...                           }
+...                       ]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("613cb7441da76fcd53f44b56"),
+                ObjectId("613cb7441da76fcd53f44b57"),
+                ObjectId("613cb7441da76fcd53f44b58"),
+                ObjectId("613cb7441da76fcd53f44b59"),
+                ObjectId("613cb7441da76fcd53f44b5a")
+        ]
+}
+
+
+#Find all the topics and tasks which are thought in the month of October
+db.topic_task.find({
+...              "$and":[
+...                      {
+...                        "$where":"this.Date.getMonth()==09"
+...                      },
+...                      {
+...                        "$where":"this.Task.Task_date.getMonth()==09"
+...                      }
+...                     ]
+...                  },
+...                  {
+...                    "Topic_name":1,
+...                    "Task.Task_name" :1
+...                  }).pretty();
+{
+        "_id" : ObjectId("613cb7441da76fcd53f44b56"),
+        "Topic_name" : "INTRODUCTION TO SQL",
+        "Task" : {
+                "Task_name" : "ASSIGNMENT-1"
+        }
+}
+{
+        "_id" : ObjectId("613cb7441da76fcd53f44b57"),
+        "Topic_name" : "CREATION,UPDATION OF TABLE",
+        "Task" : {
+                "Task_name" : "ASSIGNMENT-2"
+        }
+}
+{
+        "_id" : ObjectId("613cb7441da76fcd53f44b58"),
+        "Topic_name" : "JOINS",
+        "Task" : {
+                "Task_name" : "ASSIGNMENT-3"
+        }
+}
+
+
+
+
+
+#Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+ db.campus_drive.find({"Date": {$gte:"15-10-2020",$lt:"31-10-2020"}},{"company_name":1,"Date":1,"Placement.Colleges.Clg_name":1}).pretty();
+{
+        "_id" : ObjectId("613c9c99d53ca649e27eaff4"),
+        "company_name" : "CHUBB",
+        "Date" : "15-10-2020",
+        "Placement" : {
+                "Colleges" : [
+                        {
+                                "Clg_name" : "KITS"
+                        }
+                ]
+        }
+}
+{
+        "_id" : ObjectId("613c9c99d53ca649e27eaff5"),
+        "company_name" : "GOOGLE",
+        "Date" : "28-10-2020",
+        "Placement" : {
+                "Colleges" : [
+                        {
+                                "Clg_name" : "SR"
+                        }
+                ]
+        }
+}
+{
+        "_id" : ObjectId("613c9c99d53ca649e27eaff6"),
+        "company_name" : "AMAZON",
+        "Date" : "27-10-2020",
+        "Placement" : {
+                "Colleges" : [
+                        {
+                                "Clg_name" : "KITSW"
+                        },
+                        {
+                                "Clg_name" : "JNTU-H"
+                        }
+                ]
+        }
+}
+
+
+
+
+#Find all the company drives and students who are appeared for the placement.
+> db.campus_drive.find({},{"company_name":1,"Date":1,"Placement.Colleges.Clg_name":1,"Placement.Colleges.Students_names":1}).pretty();
+{
+        "_id" : ObjectId("613c9c99d53ca649e27eaff4"),
+        "company_name" : "CHUBB",
+        "Date" : "15-10-2020",
+        "Placement" : {
+                "Colleges" : [
+                        {
+                                "Clg_name" : "KITS",
+                                "Students_names" : [
+                                        "sam",
+                                        "rosy"
+                                ]
+                        }
+                ]
+        }
+}
+{
+        "_id" : ObjectId("613c9c99d53ca649e27eaff5"),
+        "company_name" : "GOOGLE",
+        "Date" : "28-10-2020",
+        "Placement" : {
+                "Colleges" : [
+                        {
+                                "Clg_name" : "SR",
+                                "Students_names" : [
+                                        "irshaan",
+                                        "nausheen",
+                                        "swathi"
+                                ]
+                        }
+                ]
+        }
+}
+{
+        "_id" : ObjectId("613c9c99d53ca649e27eaff6"),
+        "company_name" : "AMAZON",
+        "Date" : "27-10-2020",
+        "Placement" : {
+                "Colleges" : [
+                        {
+                                "Clg_name" : "KITSW",
+                                "Students_names" : [
+                                        "sameena",
+                                        "sharanya",
+                                        "sushmitha",
+                                        "apoorva"
+                                ]
+                        },
+                        {
+                                "Clg_name" : "JNTU-H",
+                                "Students_names" : [
+                                        "prathima",
+                                        "niharika",
+                                        "saif"
+                                ]
+                        }
+                ]
+        }
+}
+{
+        "_id" : ObjectId("613c9c99d53ca649e27eaff7"),
+        "Date" : "14-10-2020",
+        "Placement" : {
+                "Colleges" : [
+                        {
+                                "Clg_name" : "CBIT",
+                                "Students_names" : [
+                                        "anogna",
+                                        "madeeha",
+                                        "shirisha",
+                                        "samreen"
+                                ]
+                        }
+                ]
+        }
+}
+{
+        "_id" : ObjectId("613c9c99d53ca649e27eaff8"),
+        "Date" : "12-10-2020",
+        "Placement" : {
+                "Colleges" : [
+                        {
+                                "Clg_name" : "JNTU-K",
+                                "Students_names" : [
+                                        "Ayesha",
+                                        "maheen"
+                                ]
+                        }
+                ]
+        }
+}
+
+
+
+#Find the number of problems solved by the user in codekata
+> db.codekata.find({},{"Id":1,"Name":1,"Email":1,"Problems.Solved":1}).pretty();
+{
+        "_id" : ObjectId("613c8f75d53ca649e27eafe5"),
+        "Id" : 1,
+        "Name" : "Sameena",
+        "Email" : "sameena@gmail.com",
+        "Problems" : {
+                "Solved" : 35
+        }
+}
+{
+        "_id" : ObjectId("613c8f75d53ca649e27eafe6"),
+        "Id" : 2,
+        "Name" : "sharanya",
+        "Email" : "sharanya@gmail.com",
+        "Problems" : {
+                "Solved" : 30
+        }
+}
+{
+        "_id" : ObjectId("613c8f75d53ca649e27eafe7"),
+        "Id" : 3,
+        "Name" : "Apoorva",
+        "Email" : "apoorva@gmail.com",
+        "Problems" : {
+                "Solved" : 29
+        }
+}
+{
+        "_id" : ObjectId("613c8f75d53ca649e27eafe8"),
+        "Id" : 4,
+        "Name" : "Sushmitha",
+        "Email" : "sushmitha@gmail.com",
+        "Problems" : {
+                "Solved" : 20
+        }
+}
+{
+        "_id" : ObjectId("613c8f75d53ca649e27eafe9"),
+        "Id" : 5,
+        "Name" : "prathima",
+        "Email" : "prathima@gmail.com",
+        "Problems" : {
+                "Solved" : 40
+        }
+}
+
+
+#Find all the mentors with who has the mentee's count more than 15
+> db.mentors.find( { $where: "this.Mentees.Mentee_Id.length >= 15" },{Id : 1 , Name : 1, Branch : 1}).pretty();
+{
+        "_id" : ObjectId("613c96c6d53ca649e27eaff0"),
+        "Id" : 2,
+        "Name" : "Swapna",
+        "Branch" : "CSE"
+}
+{
+        "_id" : ObjectId("613c96c6d53ca649e27eaff3"),
+        "Id" : 5,
+        "Name" : "Saif",
+        "Branch" : "MECH"
+}
+
+
+
+
+#Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+> db.users.find({
+...                      "$and":[
+...                          {
+...                              "Absent":{
+...                                      "$gt":"15-10-2020","$lt":"31-10-2020"
+...                              }
+...                          },
+...                          {
+...                              "Task.Sub_date":{
+...                                  "$not":{
+...                                      "$gt":"15-10-2020","$lt":"31-10-2020"
+...                                  }
+...                              }
+...                          }
+...                      ]
+...                  }).pretty();
+{
+        "_id" : ObjectId("613c8da7d53ca649e27eafe0"),
+        "Id" : 1,
+        "Name" : "Sameena",
+        "Absent" : [
+                "8-10-2020",
+                "13-10-2020",
+                "18-10-2020"
+        ],
+        "Task" : {
+                "Task_name" : "creation of tables",
+                "Sub_date" : "10-11-2020"
+        }
+}
+{
+        "_id" : ObjectId("613c8da7d53ca649e27eafe2"),
+        "Id" : 3,
+        "Name" : "Apoorva",
+        "Absent" : [
+                "17-10-2020",
+                "21-10-2020",
+                "28-10-2020"
+        ],
+        "Task" : {
+                "Task_name" : "creation of table",
+                "Sub_date" : "13-11-2020"
+        }
+} 
+
+
+
